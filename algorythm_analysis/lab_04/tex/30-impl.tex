@@ -1,0 +1,203 @@
+\chapter{Технологическая часть}
+
+В данном разделе будут приведены средства реализации и листинги кода.
+
+
+\section{Средства реализации}
+
+В качестве языка программирования для реализации данной лабораторной работы был выбран язык программирования Python. Выбор обусловлен наличием библиотек для измерения времени, наличием инструментов для работы с параллельными потоками. Были использованы библиотеки threading, multiprocessing, os.
+
+
+\section{Сведения о модулях программы}
+Программа состоит из следующих модулей:
+main.py - главный файл программы, в котором располагается вся программа,
+timer.py - файл программы c замерами времени.
+
+
+\section{Реализация алгоритмов}
+
+В листингах \ref{lst:lev_mat}, \ref{lst:dlev_rec}, \ref{lst:dlev_mat}, \ref{lst:thread}, \ref{lst:thread2}, приведены реализации алгоритмов.
+\newpage
+\begin{lstlisting}[label=lst:lev_mat,caption=Алгоритм Бойера--Мура поиска подстроки в строке.]
+	def bouer_moor(text, pattern):
+		bad_char = bad_char_heuristic(pattern)
+		good_suffix = good_suffix_heuristic(pattern)
+		i = 0
+		indexes = []
+		while i <= len(text) - len(pattern):
+			j = len(pattern) - 1
+			while j >= 0 and pattern[j] == text[i + j]:
+				j -= 1
+			if j < 0:
+				indexes.append(i)
+				i += good_suffix[0]
+			else:
+				x = j - bad_char.get(text[i + j], -1)
+				y = good_suffix[j + 1]
+				i += max(x, y)
+		return indexes
+		
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[label=lst:dlev_rec,caption= Эвристика хорошего суффикса]
+	def good_suffix_heuristic(pattern):
+		good_suffix = [-1] * (len(pattern) + 1)
+		border = [0] * (len(pattern) + 1)
+		i = len(pattern)
+		j = len(pattern) + 1
+		border[i] = j
+		while i > 0:
+			while j <= len(pattern) and pattern[i - 1] != pattern[j - 1]:
+				if good_suffix[j] == 0:
+					good_suffix[j] = j - i
+			j = border[j]
+			i -= 1
+			j -= 1
+		border[i] = j
+		j = border[0]
+		for i in range(len(pattern) + 1):
+			if good_suffix[i] == -1:
+				good_suffix[i] = j
+			if i == j:
+				j = border[j]
+	return good_suffix
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[label=lst:dlev_mat,caption=Эвристика плохого символа]
+	def bad_char_heuristic(pattern):
+		bad_char = {}
+		for i in range(len(pattern)):
+			bad_char[pattern[i]] = i
+		return bad_char
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[label=lst:thread,caption= Схема рабочего потока алгоритм Бойера--Мура]
+def bouer_moor_thread(thread_results_pipe, text, pattern, good_suffix, bad_char, start, end):
+	indexes = []
+	pattern_len = len(pattern)
+	i = start
+	text_len = len(text) if end + pattern_len > len(text) else end + pattern_len
+	
+	while i <= text_len - pattern_len:
+		j = pattern_len - 1
+		while j >= 0 and pattern[j] == text[i + j]:
+			j -= 1
+		if j < 0:
+			indexes.append(i)
+			i += good_suffix[0]
+		else:
+			x = j - bad_char.get(text[i + j], -1)
+			y = good_suffix[j + 1]
+		if (max(x, y) > text_len - pattern_len and max(x, y) < text_len):
+			i = text_len - pattern_len
+		else:
+			i += max(x, y)
+	thread_results_pipe.send(indexes)
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[label=lst:thread2,caption= Cхема главного потока (диспетчера) алгоритма Бойера--Мура]
+def bouer_moor_parallel(text, pattern, thread_num):
+	thread_results_pipe,thread_results_pipe_recieve = Pipe()
+	thread_results = []
+	bad_char = bad_char_heuristic(pattern)
+	good_suffix = good_suffix_heuristic(pattern)
+	text_len = len(text)
+	
+	text_slice = int(text_len / thread_num)
+	
+	k = 0
+	
+	threads = []
+	for i in range(thread_num):
+		k_end = k + text_slice
+		if (i == thread_num - 1):
+			k_end = text_len
+		threads.append(threading.Thread(target=bouer_moor_thread, args=(thread_results_pipe, text, pattern, \
+						good_suffix, bad_char, k, k_end,)))
+		k += text_slice
+	for thread in threads:
+		thread.start()
+	
+	for thread in threads:
+		thread_results.append(thread_results_pipe_recieve.recv())
+		thread.join()
+	
+	return thread_results
+\end{lstlisting}
+\section{Функциональные тесты}
+В таблице \ref{tabular:functional_test} приведены функциональные тесты для алгоритма Бойера--Мура.
+
+\begin{table}[h!]
+	\captionsetup{singlelinecheck=off}\caption{\raggedright\label{tabular:functional_test} Тестирование функций}
+	\begin{center}
+		\begin{tabular}{c@{\hspace{7mm}}c@{\hspace{5mm}}c@{\hspace{7mm}}c@{\hspace{7mm}}}
+			\hline
+			Строка & Паттерн & Ожидаемый результат \\ \hline
+			\vspace{4mm}
+			$
+				abcdefabcdef 
+			$ &
+			$
+				abc
+			$ &
+			$
+				0, 6
+			$ \\
+			\vspace{4mm}
+			$
+				abc 
+			$ &
+			$
+				abc
+			$ &
+			$
+				0
+			$ \\
+			\vspace{4mm}
+			$
+				bc de abc fab cdef 
+			$ &
+			$
+				abc
+			$ &
+			$
+				6
+			$ \\
+			\vspace{4mm}
+			$
+				bc de ac fab cdef 
+			$ &
+			$
+			abc
+			$ &
+			
+			Пустой вывод
+			 \\
+			\vspace{4mm}
+			$
+			bc de ac fab cdef 
+			$ &
+			
+			Пустой ввод
+			 &
+			ERR: pattern cant be empty
+			 \\
+			\vspace{4mm}
+			$
+			hello we are test3ing\_he llahell
+			$ &
+			$
+				hel
+			$
+			&
+			$
+				0, 29
+			$\\
+			\vspace{4mm}
+		\end{tabular}
+	\end{center}
+\end{table}
+Алгоритм прошел проверку с последовательным и параллельным запуском.
+\section*{Вывод}
+
+Были разработан и протестирован алгоритм Бойера--Мура.

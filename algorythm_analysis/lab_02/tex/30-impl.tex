@@ -1,0 +1,276 @@
+\chapter{Технологическая часть}
+
+В данном разделе будут приведены требования к программному обеспечению, средства реализации и листинги кода.
+
+\section{Требования к вводу}
+К вводу программы прилагаются данные требования:
+\begin{enumerate}
+	\item Перед вводом матрицы запрашиваются ее размерности.
+	\item На вход подаются две матрицы.
+	\item Ввод матрицы - числа типа int.
+\end{enumerate}
+
+\section{Требования к программе}
+К программе прилагаются данные требования:
+
+В вводе размерностей (n1, n2, m1, m2) n2 обязана равняться m1. На выход программа должна вывести три итоговые матрицы, рассчитанные разными методами.
+
+
+\section{Требования к программному обеспечению}
+
+К программе предъявляется ряд требований:
+\begin{itemize}
+	\item у пользователя есть выбор алгоритма, или какой-то один, или все сразу;
+	\item на вход подаются две матрицы с содержанием -- числа типа int;
+	\item на выходе — матрица с результатом умножения исходных матриц.
+\end{itemize}
+
+\section{Средства реализации}
+
+В качестве языка программирования для реализации данной лабораторной работы был выбран язык программирования С. Выбор обусловлен наличием библиотек для измерения времени, наличием инструментов для работы с матрицами.
+
+
+\section{Сведения о модулях программы}
+Программа состоит из следующих модулей:
+main.c - главный файл программы, в котором располагается вся программа,
+time.c - файл программы c замерами времени.
+
+
+\section{Реализация алгоритмов}
+
+В листингах \ref{lst:lev_mat}, \ref{lst:dlev_rec}, \ref{lst:dlev_mat},  приведены реализации алгоритмов умножения матриц.
+\newpage
+\begin{lstlisting}[label=lst:lev_mat,caption=Стандартный алгоритм умножения матриц.]
+	int multMatrix(int **matrix1, int **matrix2, int **matrix_res, size_t n1, size_t m1, size_t m2){
+		for (size_t i = 0; i < n1; i++) {
+			for (size_t j = 0; j < m2; j++) {
+				matrix_res[i][j] = 0;
+				for (size_t k = 0; k < m1; k++) {
+					matrix_res[i][j] += matrix1[i][k] * matrix2[k][j];
+				}
+			}
+		}
+		return 0;
+	}
+	
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[label=lst:dlev_rec,caption=Алгоритм Винограда]
+int Vinograd(int **matrix1, int **matrix2, int **matrix_res, size_t n1, size_t m1, size_t m2)
+{
+    int *rowCnt = (int*)malloc(n1 * sizeof(int));
+	int *colCnt = (int*)malloc(m2 * sizeof(int));;
+	for (size_t i = 0; i < n1; i++)
+	{
+		rowCnt[i] = 0;
+		for (size_t j = 0; j < m1 / 2; j++)
+		rowCnt[i] = rowCnt[i] + matrix1[i][j * 2] * matrix1[i][(j*2) + 1];
+	}
+	for (size_t i = 0; i < m2; i++) {
+		colCnt[i] = 0;
+		for (size_t j = 0; j < m1 / 2; j++)
+		colCnt[i] = colCnt[i] + matrix2[j * 2][i] * matrix2[j*2 + 1][i];
+	}
+	
+	for (size_t i = 0; i < n1; i++) {
+		for (size_t j = 0; j < m2; j++) {
+			matrix_res[i][j] = -rowCnt[i] - colCnt[j];
+			for (size_t k = 0; k < m1 / 2; k++) {
+				matrix_res[i][j] += (matrix1[i][2*k] + matrix2[2*k+1][j]) * \
+				(matrix1[i][2*k+1] + matrix2[2*k][j]);
+			}
+		}
+	}
+	if (m1 % 2 == 1){
+		for (size_t i = 0; i < n1; i++)
+			for (size_t j = 0; j < m2; j++)
+				matrix_res[i][j] = matrix_res[i][j] + matrix1[i][m1 - 1] * matrix2[m1 - 1][j];
+	}
+	free(rowCnt);
+	free(colCnt);
+	return 0;
+}
+	
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[label=lst:dlev_mat,caption= Оптимизированный Алгоритм Винограда]
+	int Vinograd_Opt(int **matrix1, int **matrix2, int **matrix_res, size_t n1, size_t m1, size_t m2)
+	{
+		int *rowCnt = (int*)malloc(n1 * sizeof(int));
+		int *colCnt = (int*)malloc(m2 * sizeof(int));;
+		for (size_t i = 0; i < n1; i++) {
+			rowCnt[i] = 0;
+			for (int j = 0; j < m1 / 2; j++)
+				rowCnt[i] += matrix1[i][j << 1] * matrix1[i][(j<<1) + 1];
+		}
+		for (size_t i = 0; i < m2; i++) {
+			colCnt[i] = 0;
+			for (int j = 0; j < m1 / 2; j++)
+				colCnt[i] += matrix2[j * 2][i] * matrix2[(j<<1) + 1][i];
+		}
+		for (size_t i = 0; i < n1; i++) {
+			for (size_t j = 0; j < m2; j++) {
+				matrix_res[i][j] = -rowCnt[i] - colCnt[j];
+				for (int k = 0; k < m1 / 2; k++) {
+					matrix_res[i][j] += (matrix1[i][k<<1] + matrix2[(k<<1)+1][j]) * \
+					(matrix1[i][2*k+1] + matrix2[2*k][j]);
+				}
+			}
+		}
+		if (m1 % 2 == 1) {
+			for (size_t i = 0; i < n1; i++)
+			for (size_t j = 0; j < m2; j++)
+			matrix_res[i][j] += matrix1[i][m1 - 1] * matrix2[m1 - 1][j];
+		}
+		free(rowCnt);
+		free(colCnt);
+		return 0;
+	}
+	
+\end{lstlisting}
+\newpage
+
+\section{Функциональные тесты}
+В таблице \ref{tabular:functional_test} приведены функциональные тесты для алгоритмов умножения матриц.
+
+\begin{table}[h!]
+	\captionsetup{singlelinecheck=off}\caption{\raggedright\label{tabular:functional_test} Тестирование функций}
+	\begin{center}
+		\begin{tabular}{c@{\hspace{7mm}}c@{\hspace{7mm}}c@{\hspace{7mm}}c@{\hspace{7mm}}c@{\hspace{7mm}}c@{\hspace{7mm}}}
+			\hline
+			Первая матрица & Вторая матрица & Ожидаемый результат \\ \hline
+			\vspace{4mm}
+			$\begin{pmatrix}
+				1 & 2 & 3\\
+				4 & 5 & 6\\
+				7 & 8 & 9
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				1 & 2 & 3\\
+				4 & 5 & 6\\
+				7 & 8 & 9
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				30 & 36 & 42 \\
+				66 & 81 & 96 \\
+				102 & 126 & 150
+			\end{pmatrix}$ \\
+			\vspace{2mm}
+			\vspace{2mm}
+			$\begin{pmatrix}
+				1 & 2 & 3\\
+				4 & 5 & 6
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				1 & 2\\
+				3 & 4\\
+				5 & 6
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				22 & 28\\
+				49 & 64
+			\end{pmatrix}$ \\
+			\vspace{2mm}
+			\vspace{2mm}
+			$\begin{pmatrix}
+				2
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				2
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				4
+			\end{pmatrix}$ \\
+			\vspace{2mm}
+			\vspace{2mm}
+			$\begin{pmatrix}
+				1 & -2 & 3\\
+				4 & 5 & -6\\
+				-7 & 8 & 9
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				1 & -2 & 3\\
+				4 & 5 & -6\\
+				-7 & 8 & 9
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				-28 & 12 & 42\\
+				66 & -31 & -72\\
+				-38 & 126 & 12
+			\end{pmatrix}$\\
+			\vspace{2mm}
+			\vspace{2mm}
+			$\begin{pmatrix}
+				1 & 2\\
+				3 & 4\\
+				5 & 6
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				1 & 2 & 3\\
+				4 & 5 & 6
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				22 & 28\\
+				49 & 64
+			\end{pmatrix}$ \\
+			\vspace{2mm}
+			\vspace{2mm}
+			$\begin{pmatrix}
+				0 & 1\\
+				0 & 1
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				0 & 1 \\
+				0 & 1 
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				0 & 1\\
+				0 & 1
+			\end{pmatrix}$ \\
+			\vspace{2mm}
+			\vspace{2mm}
+			$\begin{pmatrix}
+				4 \\
+				4 \\
+				4 
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				-4 & -4 & -4
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				-48
+			\end{pmatrix}$ \\
+			\vspace{2mm}
+			\vspace{2mm}
+			$\begin{pmatrix}
+				20 & 27\\
+				19 & 16
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				-2 & -3\\
+				-5 & -7
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				-175 & -249\\
+				-118 & -169
+			\end{pmatrix}$ \\
+			\vspace{2mm}
+			\vspace{2mm}
+			$\begin{pmatrix}
+				0
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				0
+			\end{pmatrix}$ &
+			$\begin{pmatrix}
+				0
+			\end{pmatrix}$ \\
+			\vspace{2mm}
+			\vspace{2mm}
+		\end{tabular}
+	\end{center}
+\end{table}
+Все алгоритмы прошли проверку.
+\section*{Вывод}
+
+Были разработаны и протестированы алгоритмы: стандартный алгоритм умножения матриц, Алгоритм Винограда, оптимизированный Алгоритм Винограда.

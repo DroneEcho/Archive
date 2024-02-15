@@ -1,0 +1,256 @@
+\chapter{Технологическая часть}
+
+В данном разделе будут приведены средства реализации и листинги кода.
+
+
+\section{Средства реализации}
+
+В качестве языка программирования для реализации данной лабораторной работы был выбран язык программирования С++. 
+Выбор обусловлен наличием библиотек для измерения времени, наличием инструментов для работы с потоками.
+
+
+\section{Сведения о модулях программы}
+Программа состоит из следующих модулей:
+main.сpp --- главный файл программы,
+conveyor.cpp --- файл с функциями для работы с конвейером,
+moor.cpp --- файл с алгоритмом Бойера--Мура.
+
+
+\section{Реализация алгоритмов}
+
+В листингах \ref{lst:lev_mat}, \ref{lst:dlev_mat}, \ref{lst:thread}, \ref{lst:thread2}, приведены реализации алгоритмов.
+\newpage
+\begin{lstlisting}[label=lst:lev_mat,caption=Схема линейного конвейера.]
+void parse_linear(std::string str, size_t size, bool is_print)
+{
+	time_now = 0;
+	to_print.clear();
+	std::queue<request> q1;
+	std::queue<request> q2;
+	std::queue<request> q3;
+	
+	queues_t queues = {.q1 = q1, .q2 = q2, .q3 = q3};
+	
+	for (size_t i = 0; i < size; i++)
+	{
+		request res = generate(str);
+		queues.q1.push(res);
+	}
+	
+	for (size_t i = 0; i < size; i++)
+	{
+		request req = queues.q1.front();
+		stage1_linear(req, i + 1, is_print);
+		queues.q1.pop();
+		queues.q2.push(req);
+		
+		req = queues.q2.front();
+		stage2_linear(req, i + 1, is_print);
+		queues.q2.pop();
+		queues.q3.push(req);
+		
+		req = queues.q3.front();
+		stage3_linear(req, i + 1, is_print);
+		queues.q3.pop();
+		
+		if (is_print)
+		{
+			for (auto& log1: req.logger)
+			{
+				to_print.push_back(log1);
+			}
+		}
+	}
+	if (is_print)
+	{
+		sort(to_print.begin(), to_print.end(), pred());
+		for (auto& one: to_print)
+		cout << one.data;
+	}
+}
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[label=lst:dlev_mat,caption=Главный поток параллельного конвейера]
+void parse_parallel(std::string str, size_t size, bool is_print)
+{
+	to_print.clear();
+	t1.resize(size + 1);
+	t2.resize(size + 1);
+	t3.resize(size + 1);
+	
+	for (size_t i = 0; i < size + 1; i++)
+	{
+		t1[i] = 0;
+		t2[i] = 0;
+		t3[i] = 0;
+	}
+	
+	std::queue<request> q1;
+	std::queue<request> q2;
+	std::queue<request> q3;
+	
+	queues_t queues = {.q1 = q1, .q2 = q2, .q3 = q3};
+	
+	
+	for (size_t i = 0; i < size; i++)
+	{
+		request res = generate(str);
+		
+		q1.push(res);
+	}
+	
+	std::thread threads[THREADS];
+	
+	threads[0] = std::thread(stage1_parallel, std::ref(q1), std::ref(q2), std::ref(q3), is_print);
+	threads[1] = std::thread(stage2_parallel, std::ref(q1), std::ref(q2), std::ref(q3), is_print);
+	threads[2] = std::thread(stage3_parallel, std::ref(q1), std::ref(q2), std::ref(q3), is_print);
+	
+	for (int i = 0; i < THREADS; i++)
+	{
+		threads[i].join();
+	}
+	if (is_print)
+	{
+		sort(to_print.begin(), to_print.end(), pred());
+		for (auto& one: to_print)
+		cout << one.data;
+	}
+}
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[label=lst:thread,caption= Лента параллельного конвейера]
+void stage1_parallel(std::queue<request> &q1, std::queue<request> &q2, std::queue<request> &q3, bool is_print)
+{
+	int task_num = 1;
+	
+	while(!q1.empty())
+	{      
+		m.lock();
+		request req = q1.front();
+		m.unlock();
+		
+		log_conveyor(req, task_num++, 1, is_print);
+		
+		m.lock();
+		q2.push(req);
+		q1.pop();
+		m.unlock();
+	}
+}
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[label=lst:thread2,caption= Лента последовательного конвейера]
+void log_linear(request &req, int task_num, int stage_num, bool is_print)
+{
+	std::chrono::time_point<std::chrono::system_clock> time_start, time_end;
+	double start_res_time = time_now, res_time = 0;
+	
+	time_start = std::chrono::system_clock::now();
+	if (stage_num == 1)
+	{
+		search(req.text, req.sub_str, req.ans);
+	}
+	else if (stage_num == 2)
+	{
+		search_detect(req.text, req.sub_str, req.inputs, req.comb);
+	}
+	else if (stage_num == 3)
+	{
+		log_in_file(req, task_num);
+	}
+	
+	time_end = std::chrono::system_clock::now();
+	
+	res_time = (std::chrono::duration_cast<std::chrono::nanoseconds>
+	(time_end - time_start).count()) / 1e9;
+	
+	time_now = start_res_time + res_time;
+	
+	if (is_print)
+	{
+		log_s tmp;
+		tmp.data = "Task: "+ to_string(task_num) +", Tape: " + to_string(stage_num) + ", Start: "+ \
+		to_string(start_res_time) + ", End: " + to_string(start_res_time + res_time) + "\n";
+		tmp.start = start_res_time;
+		tmp.end = start_res_time + res_time;
+		req.logger.push_back(tmp);
+	}
+}
+\end{lstlisting}
+\section{Функциональные тесты}
+В таблице \ref{tabular:functional_test} приведены функциональные тесты для алгоритма Бойера--Мура.
+
+\begin{table}[h!]
+	\captionsetup{singlelinecheck=off}\caption{\raggedright\label{tabular:functional_test} Тестирование функций}
+	\begin{center}
+		\begin{tabular}{c@{\hspace{7mm}}c@{\hspace{5mm}}c@{\hspace{7mm}}c@{\hspace{7mm}}}
+			\hline
+			Строка & Паттерн & Ожидаемый результат \\ \hline
+			\vspace{4mm}
+			$
+				abcdefabcdef 
+			$ &
+			$
+				abc
+			$ &
+			$
+				0, 6
+			$ \\
+			\vspace{4mm}
+			$
+				abc 
+			$ &
+			$
+				abc
+			$ &
+			$
+				0
+			$ \\
+			\vspace{4mm}
+			$
+				bc de abc fab cdef 
+			$ &
+			$
+				abc
+			$ &
+			$
+				6
+			$ \\
+			\vspace{4mm}
+			$
+				bc de ac fab cdef 
+			$ &
+			$
+			abc
+			$ &
+			
+			Пустой вывод
+			 \\
+			\vspace{4mm}
+			$
+			bc de ac fab cdef 
+			$ &
+			
+			Пустой ввод
+			 &
+			ERR: pattern cant be empty
+			 \\
+			\vspace{4mm}
+			$
+			hello we are test3ing\_he llahell
+			$ &
+			$
+				hel
+			$
+			&
+			$
+				0, 29
+			$\\
+			\vspace{4mm}
+		\end{tabular}
+	\end{center}
+\end{table}
+Алгоритм прошел тестирование.
+\section*{Вывод}
+
+Были разработан и протестирован конвейерный алгоритм.

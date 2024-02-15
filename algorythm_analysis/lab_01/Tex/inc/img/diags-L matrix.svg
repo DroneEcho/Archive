@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="822px"
+   height="951px"
+   viewBox="-0.5 -0.5 822 951"
+   id="svg49"
+   sodipodi:docname="diags-L matrix.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <sodipodi:namedview
+     id="namedview49"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.1703324"
+     inkscape:cx="390.91458"
+     inkscape:cy="140.55836"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g48" />
+  <defs
+     id="defs1">
+    <rect
+       x="90.024778"
+       y="657.36214"
+       width="88.816391"
+       height="25.376112"
+       id="rect72" />
+    <rect
+       x="245.30241"
+       y="472.47903"
+       width="53.773189"
+       height="38.668361"
+       id="rect68" />
+    <rect
+       x="223.4408"
+       y="267.87262"
+       width="90.572562"
+       height="33.751096"
+       id="rect64" />
+    <rect
+       x="722.61499"
+       y="438.64422"
+       width="87.003812"
+       height="22.959339"
+       id="rect63" />
+    <rect
+       x="522.50115"
+       y="439.19148"
+       width="86.7275"
+       height="19.225308"
+       id="rect62" />
+    <rect
+       x="542.15368"
+       y="344.77386"
+       width="50.41303"
+       height="21.788682"
+       id="rect60" />
+    <rect
+       x="636.99854"
+       y="261.89142"
+       width="48.704113"
+       height="29.478806"
+       id="rect59" />
+    <rect
+       x="429.79244"
+       y="183.7085"
+       width="80.319064"
+       height="52.121946"
+       id="rect57" />
+    <rect
+       x="439.61871"
+       y="196.09814"
+       width="55.539779"
+       height="31.614951"
+       id="rect56" />
+    <rect
+       x="443.46377"
+       y="87.154729"
+       width="49.131343"
+       height="31.614951"
+       id="rect52" />
+    <rect
+       x="421.67509"
+       y="10.253498"
+       width="89.718104"
+       height="16.234704"
+       id="rect51" />
+    <rect
+       x="319.01398"
+       y="52.262707"
+       width="72.805273"
+       height="52.564803"
+       id="rect50" />
+  </defs>
+  <g
+     id="g48">
+    <path
+       d="M 467 40 L 467 60 L 467 40 L 467 49.88"
+       fill="none"
+       stroke="rgb(0, 0, 0)"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path1" />
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g2">
+      <switch
+         id="switch2">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 20px; margin-left: 408px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Начало</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+      </switch>
+    </g>
+    <path
+       d="M 467 140 L 467 160 L 467 150 L 467 163.63"
+       fill="none"
+       stroke="rgb(0, 0, 0)"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path3" />
+    <path
+       d="M 467 168.88 L 463.5 161.88 L 467 163.63 L 470.5 161.88 Z"
+       fill="rgb(0, 0, 0)"
+       stroke="rgb(0, 0, 0)"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path4" />
+    <path
+       d="M 467 60 L 517 100 L 467 140 L 417 100 Z"
+       fill="rgb(255, 255, 255)"
+       stroke="rgb(0, 0, 0)"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path5" />
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g5">
+      <switch
+         id="switch5">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 90px; height: 1px; padding-top: 98px; margin-left: 422px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">n = длина s1<xhtml:br />
+&#10;&#10;m = длина s2</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+      </switch>
+    </g>
+    <path
+       d="M 517 210 L 661 210 L 661 233.63"
+       fill="none"
+       stroke="rgb(0, 0, 0)"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path6" />
+    <path
+       d="M 661 238.88 L 657.5 231.88 L 661 233.63 L 664.5 231.88 Z"
+       fill="rgb(0, 0, 0)"
+       stroke="rgb(0, 0, 0)"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path7" />
+    <path
+       d="m 468.96061,210 h -150 v 23.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path8" />
+    <path
+       d="m 318.96061,238.88 -3.5,-7 3.5,1.75 3.5,-1.75 z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path9" />
+    <path
+       d="M 467 170 L 517 210 L 467 250 L 417 210 Z"
+       fill="rgb(255, 255, 255)"
+       stroke="rgb(0, 0, 0)"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path10" />
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g10">
+      <switch
+         id="switch10">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 90px; height: 1px; padding-top: 208px; margin-left: 422px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">n == 0 <xhtml:br />
+&#10;&#10;или m == 0</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+      </switch>
+    </g>
+    <path
+       d="M 621 275 L 567 275 L 567 313.63"
+       fill="none"
+       stroke="rgb(0, 0, 0)"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path11" />
+    <path
+       d="M 567 318.88 L 563.5 311.88 L 567 313.63 L 570.5 311.88 Z"
+       fill="rgb(0, 0, 0)"
+       stroke="rgb(0, 0, 0)"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path12" />
+    <path
+       d="M 701 275 L 761 275 L 761 413.63"
+       fill="none"
+       stroke="rgb(0, 0, 0)"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path13" />
+    <path
+       d="M 761 418.88 L 757.5 411.88 L 761 413.63 L 764.5 411.88 Z"
+       fill="rgb(0, 0, 0)"
+       stroke="rgb(0, 0, 0)"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path14" />
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g14">
+      <switch
+         id="switch14">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 261px; margin-left: 748px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">Да</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="748"
+           y="264"
+           fill="rgb(0, 0, 0)"
+           font-family="Helvetica"
+           font-size="11px"
+           text-anchor="middle"
+           id="text14">Да</text>
+      </switch>
+    </g>
+    <path
+       d="M 661 240 L 701 275 L 661 310 L 621 275 Z"
+       fill="rgb(255, 255, 255)"
+       stroke="rgb(0, 0, 0)"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path15" />
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g15">
+      <switch
+         id="switch15">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 275px; margin-left: 622px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">n != 0</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+      </switch>
+    </g>
+    <path
+       d="M 567 390 L 567 413.63"
+       fill="none"
+       stroke="rgb(0, 0, 0)"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path16" />
+    <path
+       d="M 567 418.88 L 563.5 411.88 L 567 413.63 L 570.5 411.88 Z"
+       fill="rgb(0, 0, 0)"
+       stroke="rgb(0, 0, 0)"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path17" />
+    <path
+       d="M 567 320 L 607 355 L 567 390 L 527 355 Z"
+       fill="rgb(255, 255, 255)"
+       stroke="rgb(0, 0, 0)"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path18" />
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g18">
+      <switch
+         id="switch18">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 355px; margin-left: 528px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">m != 0</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+      </switch>
+    </g>
+    <path
+       d="M 761,480 V 890 H 437 l 0.64084,-0.0413"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path19"
+       sodipodi:nodetypes="cccc" />
+    <path
+       d="m 488.96061,908.88 -3.5,-7 3.5,1.75 3.5,-1.75 z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path20" />
+    <rect
+       x="701"
+       y="420"
+       width="120"
+       height="60"
+       fill="rgb(255, 255, 255)"
+       stroke="rgb(0, 0, 0)"
+       pointer-events="all"
+       id="rect20" />
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g20">
+      <switch
+         id="switch20">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 450px; margin-left: 702px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Вернуть n</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+      </switch>
+    </g>
+    <path
+       d="m 318.96061,330 v 13.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path21" />
+    <path
+       d="m 318.96061,348.88 -3.5,-7 3.5,1.75 3.5,-1.75 z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path22" />
+    <path
+       d="m 318.96061,240 70,45 -70,45 -70,-45 z"
+       fill="#ffffff"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path23" />
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g23">
+      <switch
+         id="switch23">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 138px; height: 1px; padding-top: 285px; margin-left: 198px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Создать матрицу matrix[n + 1][m + 1]</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+      </switch>
+    </g>
+    <path
+       d="m 318.96061,430 v 13.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path24" />
+    <path
+       d="m 318.96061,448.88 -3.5,-7 3.5,1.75 3.5,-1.75 z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path25" />
+    <path
+       d="m 268.96061,390 h -210 v 500 h 430 v 13.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path26" />
+    <path
+       d="m 488.96061,908.88 -3.5,-7 3.5,1.75 3.5,-1.75 z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path27" />
+    <path
+       d="m 318.96061,350 50,40 -50,40 -50,-40 z"
+       fill="#ffffff"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path28" />
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g28">
+      <switch
+         id="switch28">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 98px; height: 1px; padding-top: 390px; margin-left: 218px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Цикл по i<xhtml:br />
+&#10;&#10;1, n + 1</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+      </switch>
+    </g>
+    <path
+       d="m 318.96061,530 v 13.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path29" />
+    <path
+       d="m 318.96061,548.88 -3.5,-7 3.5,1.75 3.5,-1.75 z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path30" />
+    <path
+       d="m 368.96061,490 h 40 V 390 h -33.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path31" />
+    <path
+       d="m 370.08061,390 7,-3.5 -1.75,3.5 1.75,3.5 z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path32" />
+    <path
+       d="m 318.96061,450 50,40 -50,40 -50,-40 z"
+       fill="#ffffff"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path33" />
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g33">
+      <switch
+         id="switch33">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 98px; height: 1px; padding-top: 490px; margin-left: 218px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Цикл по j<xhtml:br />
+&#10;&#10;1, m + 1</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+      </switch>
+    </g>
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g34">
+      <switch
+         id="switch34">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 196px; margin-left: 641px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">Да</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="641"
+           y="199"
+           fill="rgb(0, 0, 0)"
+           font-family="Helvetica"
+           font-size="11px"
+           text-anchor="middle"
+           id="text34">Да</text>
+      </switch>
+    </g>
+    <path
+       d="M 567,480 V 890 H 437 l 0.21361,0.17228"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path34"
+       sodipodi:nodetypes="cccc" />
+    <path
+       d="m 488.96061,908.88 -3.5,-7 3.5,1.75 3.5,-1.75 z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path35" />
+    <rect
+       x="507"
+       y="420"
+       width="120"
+       height="60"
+       fill="rgb(255, 255, 255)"
+       stroke="rgb(0, 0, 0)"
+       pointer-events="all"
+       id="rect35" />
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g35">
+      <switch
+         id="switch35">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 450px; margin-left: 508px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Вернуть m</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+      </switch>
+    </g>
+    <path
+       d="m 383.96061,600 h 65 v 33.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path36" />
+    <path
+       d="m 448.96061,638.88 -3.5,-7 3.5,1.75 3.5,-1.75 z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path37" />
+    <path
+       d="m 253.96061,600 h -65 v 33.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path38" />
+    <path
+       d="m 188.96061,638.88 -3.5,-7 3.5,1.75 3.5,-1.75 z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path39" />
+    <path
+       d="m 318.96061,550 65,50 -65,50 -65,-50 z"
+       fill="#ffffff"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path40" />
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g40">
+      <switch
+         id="switch40">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 600px; margin-left: 203px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">S1[i - 1]  != s2[j - 1]</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+      </switch>
+    </g>
+    <path
+       d="m 448.96061,700 v 30 h -130 v 23.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path41" />
+    <path
+       d="m 318.96061,758.88 -3.5,-7 3.5,1.75 3.5,-1.75 z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path42" />
+    <rect
+       x="389.54916"
+       y="639.57275"
+       width="120"
+       height="60"
+       fill="#ffffff"
+       stroke="#000000"
+       pointer-events="all"
+       id="rect42" />
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g42">
+      <switch
+         id="switch42">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 670px; margin-left: 338px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">change = 1</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+      </switch>
+    </g>
+    <path
+       d="m 188.96061,700 v 30 h 130 v 23.63"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path43" />
+    <path
+       d="m 318.96061,758.88 -3.5,-7 3.5,1.75 3.5,-1.75 z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path44" />
+    <rect
+       x="128.96062"
+       y="640"
+       width="120"
+       height="60"
+       fill="#ffffff"
+       stroke="#000000"
+       pointer-events="all"
+       id="rect44" />
+    <rect
+       x="5.0400968"
+       y="641.19196"
+       width="103.15488"
+       height="60.072281"
+       fill="#ffffff"
+       stroke="#000000"
+       pointer-events="all"
+       id="rect44-0"
+       style="stroke-width:0.927717" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.6667px;text-align:center;text-anchor:middle;fill:#000000"
+       x="58.655144"
+       y="665.85944"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4-9"
+         x="58.655144"
+         y="665.85944">Вернуть </tspan><tspan
+         sodipodi:role="line"
+         x="58.65514"
+         y="679.19281"
+         id="tspan5-0">matrix[-1][-1]</tspan></text>
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g44">
+      <switch
+         id="switch44">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 670px; margin-left: 78px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">change = 0</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+      </switch>
+    </g>
+    <g
+       transform="translate(51.46061,-0.5)"
+       id="g45">
+      <switch
+         id="switch45">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 591px; margin-left: 388px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">Да</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="388"
+           y="594"
+           fill="#000000"
+           font-family="Helvetica"
+           font-size="11px"
+           text-anchor="middle"
+           id="text45">Да</text>
+      </switch>
+    </g>
+    <path
+       d="m 318.97075,850.00907 v 20.00107 H 117.40918 V 489.98986 h 147.45668"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path45"
+       style="stroke-width:0.979729" />
+    <path
+       d="m 267.84061,490 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path46" />
+    <rect
+       x="228.96062"
+       y="760"
+       width="180"
+       height="90"
+       fill="#ffffff"
+       stroke="#000000"
+       pointer-events="all"
+       id="rect46" />
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g46">
+      <switch
+         id="switch46">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 178px; height: 1px; padding-top: 805px; margin-left: 178px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">ret = min(matrix[i - 1][j] + 1, <xhtml:br />
+&#10;&#10;matrix[i][j - 1] + 1, <xhtml:br />
+&#10;&#10;matrix[i - 1][j - 1] + change)</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+      </switch>
+    </g>
+    <g
+       transform="translate(-0.5 -0.5)"
+       id="g47">
+      <switch
+         id="switch47">
+        <foreignObject
+           pointer-events="none"
+           width="100%"
+           height="100%"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 930px; margin-left: 378px;">
+            <xhtml:div
+               data-drawio-colors="color: rgb(0, 0, 0); "
+               style="box-sizing: border-box; font-size: 0px; text-align: center;">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Конец</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+      </switch>
+    </g>
+    <text
+       xml:space="preserve"
+       transform="translate(20.006995,0.7816872)"
+       id="text50"
+       style="white-space:pre;shape-inside:url(#rect51);fill:#000000"><tspan
+         x="421.67578"
+         y="21.20187"
+         id="tspan1">Начало</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="translate(-0.5,-0.5)"
+       id="text51"
+       style="fill:#000000;white-space:pre;shape-inside:url(#rect52)" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.6667px;fill:#000000"
+       x="430.14688"
+       y="95.626534"
+       id="text53"><tspan
+         id="tspan53"
+         x="430.14688"
+         y="95.626534"
+         sodipodi:role="line"
+         style="font-size:10.6667px">n = длина s1</tspan><tspan
+         x="430.14688"
+         y="108.95991"
+         id="tspan54"
+         sodipodi:role="line"
+         style="font-size:10.6667px">m = длина s2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="fill:#000000"
+       x="546.35321"
+       y="137.495"
+       id="text55"><tspan
+         sodipodi:role="line"
+         id="tspan55" /></text>
+    <text
+       xml:space="preserve"
+       transform="translate(-0.5,-0.5)"
+       id="text57"
+       style="fill:#000000;font-size:10.66666667px;white-space:pre;shape-inside:url(#rect57)" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.6667px;fill:#000000"
+       x="435.27365"
+       y="204.14273"
+       id="text58"><tspan
+         sodipodi:role="line"
+         id="tspan58"
+         x="435.27365"
+         y="204.14273">n == 0 </tspan><tspan
+         sodipodi:role="line"
+         x="435.27365"
+         y="217.4761"
+         id="tspan59">или m == 0</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="translate(6.7628941,5.4812069)"
+       id="text59"
+       style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect59);fill:#000000"><tspan
+         x="636.99805"
+         y="271.62218"
+         id="tspan2">n != 0</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="translate(5.4812069,3.3450616)"
+       id="text60"
+       style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect60);fill:#000000"><tspan
+         x="542.1543"
+         y="354.50499"
+         id="tspan3">m != 0</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="translate(11.462414,2.4906035)"
+       id="text62"
+       style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect62);fill:#000000"><tspan
+         x="522.50195"
+         y="448.92296"
+         id="tspan4">Вернуть m</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="translate(11.583863,4.3335451)"
+       id="text63"
+       style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect63);fill:#000000"><tspan
+         x="722.61523"
+         y="448.37609"
+         id="tspan5">Вернуть n</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="translate(-0.5,-0.5)"
+       id="text64"
+       style="fill:#000000;font-size:10.66666667px;white-space:pre;shape-inside:url(#rect64)" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.6667px;text-align:center;text-anchor:middle;fill:#000000"
+       x="320.69824"
+       y="277.77271"
+       id="text65"><tspan
+         sodipodi:role="line"
+         id="tspan65"
+         x="320.69824"
+         y="277.77271">Создать матрицу </tspan><tspan
+         sodipodi:role="line"
+         x="320.69824"
+         y="291.10608"
+         id="tspan66">matrix[n + 1]</tspan><tspan
+         sodipodi:role="line"
+         x="320.69824"
+         y="304.43945"
+         id="tspan9">[m + 1]</tspan></text>
+    <path
+       d="m 467.15676,59.161463 -3.5,-7 3.5,1.75 3.5,-1.75 z"
+       fill="#000000"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path4-1" />
+    <path
+       id="path3779"
+       style="fill:none;stroke:#000000;stroke-width:1.351;stroke-dasharray:none"
+       d="m 428.28099,1.3066599 h 72.59536 c 10.04791,0 18.16246,8.3341806 18.16246,18.6155491 0,10.281362 -8.11455,18.615545 -18.16246,18.615545 h -72.59536 c -10.04791,0 -18.16246,-8.334183 -18.16246,-18.615545 0,-10.2813685 8.11455,-18.6155491 18.16246,-18.6155491"
+       sodipodi:nodetypes="csssssc" />
+    <path
+       id="path3779-7"
+       style="fill:none;stroke:#000000;stroke-width:1.351;stroke-dasharray:none"
+       d="m 449.68843,911.08182 h 72.59536 c 10.04791,0 18.16246,8.33418 18.16246,18.61555 0,10.28136 -8.11455,18.61554 -18.16246,18.61554 h -72.59536 c -10.04791,0 -18.16246,-8.33418 -18.16246,-18.61554 0,-10.28137 8.11455,-18.61555 18.16246,-18.61555"
+       sodipodi:nodetypes="csssssc" />
+  </g>
+  <switch
+     id="switch49">
+    <g
+       requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+       id="g49" />
+    <a
+       transform="translate(0,-5)"
+       xlink:href="https://www.drawio.com/doc/faq/svg-export-text-problems"
+       target="_blank"
+       id="a49">
+      <text
+         text-anchor="middle"
+         font-size="10px"
+         x="50%"
+         y="100%"
+         id="text49">Text is not SVG - cannot display</text>
+    </a>
+  </switch>
+  <text
+     xml:space="preserve"
+     style="font-size:10.6667px;fill:#000000"
+     x="294.34625"
+     y="386.18359"
+     id="text67"><tspan
+       sodipodi:role="line"
+       id="tspan67"
+       x="294.34625"
+       y="386.18359">Цикл по i</tspan><tspan
+       sodipodi:role="line"
+       x="294.34625"
+       y="399.51697"
+       id="tspan68">1, n + 1</tspan></text>
+  <text
+     xml:space="preserve"
+     transform="translate(47.835451,1.9167726)"
+     id="text68"
+     style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect68);fill:#000000"><tspan
+       x="245.30273"
+       y="482.21007"
+       id="tspan6">Цикл по j&#10;</tspan><tspan
+       x="245.30273"
+       y="495.54344"
+       id="tspan7">1, m + 1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:10.6667px;fill:#000000"
+     x="262.32401"
+     y="601.27637"
+     id="text70"><tspan
+       sodipodi:role="line"
+       id="tspan70"
+       x="262.32401"
+       y="601.27637">S1[i - 1]  != s2[j - 1]</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:10.6667px;fill:#000000"
+     x="423.64359"
+     y="671.96698"
+     id="text71"><tspan
+       sodipodi:role="line"
+       id="tspan71"
+       x="423.64359"
+       y="671.96698">change = 1</tspan></text>
+  <text
+     xml:space="preserve"
+     transform="translate(65.357052,4.3335451)"
+     id="text72"
+     style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect72);fill:#000000"><tspan
+       x="90.025391"
+       y="667.09288"
+       id="tspan8">change = 0</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:10.6667px;fill:#000000"
+     x="241.17726"
+     y="789.78461"
+     id="text73"><tspan
+       sodipodi:role="line"
+       id="tspan73"
+       x="241.17726"
+       y="789.78461">ret = min(matrix[i - 1][j] + 1,</tspan><tspan
+       sodipodi:role="line"
+       x="241.17726"
+       y="803.11798"
+       id="tspan74">matrix[i][j - 1] + 1,</tspan><tspan
+       sodipodi:role="line"
+       x="241.17726"
+       y="816.45135"
+       id="tspan75">matrix[i - 1][j - 1] + change)</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:10.6667px;fill:#000000"
+     x="469.81262"
+     y="932.69342"
+     id="text76"><tspan
+       sodipodi:role="line"
+       id="tspan76"
+       x="469.81262"
+       y="932.69342">Конец</tspan></text>
+</svg>

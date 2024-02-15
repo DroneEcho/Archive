@@ -1,0 +1,83 @@
+\chapter{Технологическая часть}
+
+В данном разделе будут приведены средства реализации и листинги кода.
+
+
+
+\section{Функциональные тесты}
+В таблице \ref{tabular:functional_test} приведены функциональные тесты для алгоритма Бойера--Мура.
+
+\begin{table}[h!]
+	\captionsetup{singlelinecheck=off}\caption{\raggedright\label{tabular:functional_test} Тестирование функций}
+	\begin{center}
+		\begin{tabular}{c@{\hspace{7mm}}c@{\hspace{5mm}}c@{\hspace{7mm}}c@{\hspace{7mm}}}
+			\hline
+			Строка & Паттерн & Ожидаемый результат \\ \hline
+			\vspace{4mm}
+			$
+				abcdefabcdef 
+			$ &
+			$
+				abc
+			$ &
+			$
+				0, 6
+			$ \\
+			\vspace{4mm}
+			$
+				abc 
+			$ &
+			$
+				abc
+			$ &
+			$
+				0
+			$ \\
+			\vspace{4mm}
+			$
+				bc de abc fab cdef 
+			$ &
+			$
+				abc
+			$ &
+			$
+				6
+			$ \\
+			\vspace{4mm}
+			$
+				bc de ac fab cdef 
+			$ &
+			$
+			abc
+			$ &
+			
+			Пустой вывод
+			 \\
+			\vspace{4mm}
+			$
+			bc de ac fab cdef 
+			$ &
+			
+			Пустой ввод
+			 &
+			ERR: pattern cant be empty
+			 \\
+			\vspace{4mm}
+			$
+			hello we are test3ing\_he llahell
+			$ &
+			$
+				hel
+			$
+			&
+			$
+				0, 29
+			$\\
+			\vspace{4mm}
+		\end{tabular}
+	\end{center}
+\end{table}
+Алгоритм прошел проверку с последовательным и параллельным запуском.
+\section*{Вывод}
+
+Были разработан и протестирован алгоритм Бойера--Мура.

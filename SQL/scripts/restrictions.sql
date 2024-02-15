@@ -1,0 +1,29 @@
+ALTER TABLE Art
+	ADD CONSTRAINT PK_Art PRIMARY KEY (Id),
+	ADD CONSTRAINT PK_Art CHECK  (Year > 0);
+
+ALTER TABLE Author
+	ADD CONSTRAINT PK_Author PRIMARY KEY (Id);
+
+ALTER TABLE author_and_art
+	ADD CONSTRAINT PK_Author_and_art FOREIGN KEY (AuthorId) REFERENCES Author(Id),
+	ADD CONSTRAINT PK_Author_and_art FOREIGN KEY (PaintingId) REFERENCES Art(Id);
+
+ALTER TABLE art_owner
+    ADD CONSTRAINT PricePaid CHECK  (PricePaid > 0),
+	ADD CONSTRAINT PK_Art_owner PRIMARY KEY (Id);
+
+ALTER TABLE owner_and_art
+	ADD CONSTRAINT PK_Owner_and_art FOREIGN KEY (OwnerId) REFERENCES Art_owner(Id),
+	ADD CONSTRAINT PK_Owner_and_art FOREIGN KEY (PaintingId) REFERENCES Art(Id);
+
+ALTER TABLE museum
+    ADD CONSTRAINT PK_Museum PRIMARY KEY (Id);
+
+ALTER TABLE museum_storage_history
+	ADD CONSTRAINT PK_Museum_Storage_History FOREIGN KEY (MuseumId) REFERENCES Museum(Id),
+	ADD CONSTRAINT PK_Museum_Storage_History FOREIGN KEY (ArtId) REFERENCES Art(Id);
+
+ALTER TABLE vandalism_case
+	ADD CONSTRAINT PK_Vandalism_Case FOREIGN KEY (Museum) REFERENCES Museum(Id),
+	ADD CONSTRAINT PK_Vandalism_Case FOREIGN KEY (ArtId) REFERENCES Art(Id);

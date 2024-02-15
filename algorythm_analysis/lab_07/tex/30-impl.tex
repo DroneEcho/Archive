@@ -1,0 +1,113 @@
+\chapter{Технологическая часть}
+
+В данном разделе будут приведены средства реализации и листинги кода.
+
+
+\section{Средства реализации}
+
+В качестве языка программирования для реализации данной лабораторной работы был выбран язык программирования Python. Выбор обусловлен наличием библиотек для измерения времени, наличием инструментов для работы с массивами.
+
+
+\section{Сведения о модулях программы}
+Программа состоит из следующих модулей:
+main.py - главный файл программы, в котором располагается вся программа.
+
+
+\section{Реализация алгоритмов}
+
+В листингах \ref{lst:lev_mat}, \ref{lst:dlev_rec} приведены реализации алгоритмов.
+\newpage
+\begin{lstlisting}[label=lst:lev_mat,caption= Поиск в AVL-дереве.]
+def _find(self, key, node):
+	if not node:
+		return None
+	elif key < node.value:    
+		return self._find(key, node.l)
+	elif key > node.value:
+		return self._find(key, node.r)
+	elif key == node.value:
+		return node
+	else:
+		return None
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[label=lst:dlev_rec,caption= Бинарный поиск.]
+def BinarySearch(key, list_keys):
+	l, r = 0, len(list_keys) - 1
+	k = 0
+	while l <= r:
+		middle = (r + l) // 2
+		elem = list_keys[middle]
+		k += 1
+		if elem == key:
+			return k
+		elif elem < key:
+			l = middle + 1
+		elif elem > key:
+			r = middle - 1
+		else:
+			break
+		
+	
+	return -1
+\end{lstlisting}
+\newpage
+\section{Функциональные тесты}
+В таблице \ref{tabular:functional_test} приведены функциональные тесты для алгоритмов.
+
+\begin{table}[h!]
+	\captionsetup{singlelinecheck=off}\caption{\raggedright\label{tabular:functional_test} Тестирование функций}
+	\begin{center}
+		\begin{tabular}{c@{\hspace{7mm}}c@{\hspace{5mm}}c@{\hspace{7mm}}c@{\hspace{7mm}}}
+			\hline
+			Массив & Число для поиска & Ожидаемый результат \\ \hline
+			\vspace{4mm}
+			$
+				2, 3, 4, 7, 9, 10, 12
+			$ &
+			$
+				3
+			$ &
+			$
+				1
+			$ \\
+			\vspace{4mm}
+			$
+				2, 3, 4, 7, 9, 10, 12
+			$ &
+			$
+				9
+				
+			$ &
+			$
+				4
+			$ \\
+			\vspace{4mm}
+			$
+				2, 3, 4, 7, 9, 10, 12
+			$ &
+			$
+			 13
+			$ &
+			$
+				-1
+			$ \\
+			\vspace{4mm}
+			$
+				2, 3, 4, 7, 9, 10, 12
+			$ &
+			$
+			8
+			$ &
+			$
+			-1
+			 $\\
+			
+			\vspace{4mm}
+		\end{tabular}
+	\end{center}
+\end{table}
+Алгоритмы прошли проверку.
+\section*{Вывод}
+
+Были разработан и протестирован алгоритм поиска в AVL--дереве, алгоритм бинарного поиска.

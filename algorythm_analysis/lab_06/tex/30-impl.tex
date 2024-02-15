@@ -1,0 +1,167 @@
+\chapter{Технологическая часть}
+
+В данном разделе будут приведены средства реализации и листинги кода.
+
+
+\section{Средства реализации}
+
+В качестве языка программирования для реализации данной лабораторной работы был выбран язык программирования Python. Выбор обусловлен наличием библиотек для измерения времени, наличием инструментов для работы с массивами.
+
+
+\section{Сведения о модулях программы}
+Программа состоит из следующих модулей:
+main.py - главный файл программы, в котором располагается вся программа,
+timer.py - файл программы c замерами времени.
+
+
+\section{Реализация алгоритмов}
+
+В листингах \ref{lst:lev_mat}, \ref{lst:dlev_rec} приведены реализации алгоритмов.
+\newpage
+\begin{lstlisting}[label=lst:lev_mat,caption=Муравьиный алгоритм.]
+def run(self, max_iter=None):
+	self.max_iter = max_iter or self.max_iter
+	for i in range(self.max_iter):
+		prob_matrix = (self.Tau ** self.alpha) * (self.prob_matrix_distance) ** self.beta
+		for j in range(self.size_pop):
+			self.Table[j, 0] = 0
+			for k in range(self.n_dim - 1):
+				taboo_set = set(self.Table[j, :k + 1])
+				allow_list = list(set(range(self.n_dim)) - taboo_set)
+				prob = prob_matrix[self.Table[j, k], allow_list]
+				prob = prob / prob.sum() # нормализация вероятности
+				next_point = np.random.choice(allow_list, size=1, p=prob)[0]
+				self.Table[j, k + 1] = next_point
+						
+		y = np.array([self.func(i) for i in self.Table])
+		
+		index_best = y.argmin()
+		x_best, y_best = self.Table[index_best, :].copy(), y[index_best].copy()
+		self.generation_best_X.append(x_best)
+		self.generation_best_Y.append(y_best)
+		
+		delta_tau = np.zeros((self.n_dim, self.n_dim))
+		for j in range(self.size_pop):  # для каждого муравья
+			for k in range(self.n_dim - 1):  # для каждой вершины
+				n1, n2 = self.Table[j, k], self.Table[j, k + 1]
+				delta_tau[n1, n2] += 1 / y[j]  # нанесение феромона
+			n1, n2 = self.Table[j, self.n_dim - 1], self.Table[j, 0]
+			delta_tau[n1, n2] += 1 / y[j]  # нанесение феромона
+		
+		self.Tau = (1 - self.rho) * self.Tau + delta_tau
+		
+	best_generation = np.array(self.generation_best_Y).argmin()
+	self.best_x = self.generation_best_X[best_generation]
+	self.best_y = self.generation_best_Y[best_generation]
+	
+	return self.best_x, self.best_y
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[label=lst:dlev_rec,caption= Алгоритм полного перебора.]
+def full_combinations(matrix, size):
+	cities = np.arange(size)
+	cities_combs = []
+	
+	for combination in it.permutations(cities):
+		cities_combs.append(list(combination))
+	
+	best_way = []
+	min_length = float("inf")
+	
+	for i in range(len(cities_combs)):
+		cities_combs[i].append(cities_combs[i][0])
+		
+		length = calc_length(matrix, size, cities_combs[i])
+		
+		if length < min_length:
+			min_length = length
+			best_way = cities_combs[i]
+	
+	return min_length, best_way
+\end{lstlisting}
+\newpage
+\section{Функциональные тесты}
+В таблице \ref{tabular:functional_test} приведены функциональные тесты для алгоритмов.
+
+\begin{table}[h!]
+	\captionsetup{singlelinecheck=off}\caption{\raggedright\label{tabular:functional_test} Тестирование функций}
+	\begin{center}
+		\begin{tabular}{c@{\hspace{7mm}}c@{\hspace{5mm}}c@{\hspace{7mm}}c@{\hspace{7mm}}}
+			\hline
+			Количество городов & Координаты & Ожидаемый результат \\ \hline
+			\vspace{4mm}
+			$
+				2
+			$ &
+			$
+				\begin{bmatrix*}
+					0.0 & 0.0 \\
+					0.0 & 3.0
+				\end{bmatrix*}
+			$ &
+			$
+				6
+			$ \\
+			\vspace{4mm}
+			$
+				6 
+			$ &
+			$
+				\begin{bmatrix*}
+					0.0 & 0.0 \\
+					1.0 & 3.0 \\
+					1.0 & 5.0\\
+					0.0 & 7.0\\
+					-1.0 & 5.0 \\
+					-1.0 & 3.0	\\
+				\end{bmatrix*}
+				
+			$ &
+			$
+				14.7
+			$ \\
+			\vspace{4mm}
+			$
+				4
+			$ &
+			$
+			\begin{bmatrix*}
+				0.0 & 0.0 \\
+				0.0 & 3.0 \\
+				2.0 & 0.0 \\
+				2.0 & 3.0 \\
+			\end{bmatrix*}
+			$ &
+			$
+				10
+			$ \\
+			\vspace{4mm}
+			$
+				10
+			$ &
+			$
+			\begin{bmatrix*}
+				7.0 & 1.0 \\
+				0.0 & 7.0\\
+				0.0 & 6.0\\
+				6.0 & 0.0\\
+				7.0 & 0.0\\
+				8.0 & 2.0\\
+				6.0 & 9.0\\
+				6.0 & 2.0\\
+				7.0 & 9.0\\
+				3.0 & 7.0\\
+			\end{bmatrix*}
+			$ &
+			
+			28.3
+			 \\
+			
+			\vspace{4mm}
+		\end{tabular}
+	\end{center}
+\end{table}
+Алгоритмы прошли проверку.
+\section*{Вывод}
+
+Были разработан и протестирован муравьиный алгоритм, алгоритм полного перебора.
